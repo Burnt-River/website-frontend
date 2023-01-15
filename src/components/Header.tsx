@@ -1,12 +1,12 @@
-import { Button, Link, SxProps } from '@mui/material'
 import { ReactElement } from 'react'
+import { Button, SxProps } from '@mui/material'
 import { useLocation, useNavigate } from 'react-router-dom'
-import Flex from './ui/Flex'
+
+import Flex from 'components/ui/Flex'
 
 interface HeaderLinkItem {
   text: string
   to: string
-  isSelected: boolean
 }
 
 interface HeaderProps {

@@ -1,12 +1,12 @@
 import { Routes, Route } from 'react-router-dom'
 
-import PageLayout from './components/PageLayout'
+import PageLayout from 'components/PageLayout'
 
 import './index.css'
 
-import Home from './views/Home'
-import About from './views/About'
-import Gallery from './views/Gallery'
+import Home from 'views/Home'
+import About from 'views/About'
+import Gallery from 'views/Gallery'
 
 const App = () => {
   return (

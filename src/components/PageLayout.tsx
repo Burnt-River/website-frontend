@@ -1,15 +1,14 @@
-import { ReactElement } from 'react'
 import { SxProps } from '@mui/material'
 import { Outlet } from 'react-router-dom'
 
-import Flex from './ui/Flex'
-import Header from './Header'
+import Flex from 'components/ui/Flex'
+import Header from 'components/Header'
 
 interface PageLayoutProps {
   sx?: SxProps
 }
 
-export default function PageLayout({ sx }: PageLayoutProps): ReactElement {
+export default function PageLayout({ sx }: PageLayoutProps) {
   return (
     <Flex
       sx={{
@@ -27,12 +26,10 @@ export default function PageLayout({ sx }: PageLayoutProps): ReactElement {
           {
             text: 'About Us',
             to: '/about',
-            isSelected: window.location.pathname.includes('/about'),
           },
           {
             text: 'Gallery',
             to: '/gallery',
-            isSelected: window.location.pathname.includes('/gallery'),
           },
         ]}
       />

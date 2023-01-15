@@ -1,12 +1,12 @@
-import React, { ReactNode } from "react";
-import Box from "@mui/material/Box";
-import { SxProps } from "@mui/material";
+import Box from '@mui/material/Box'
+import { ReactNode } from 'react'
+import { SxProps } from '@mui/material'
 
 interface FlexProps {
-  children?: ReactNode;
-  sx?: SxProps;
+  children?: ReactNode
+  sx?: SxProps
 }
 
 export default function Flex({ children, sx }: FlexProps) {
-  return <Box sx={{ display: "flex", ...sx }}>{children}</Box>;
+  return <Box sx={{ display: 'flex', ...sx }}>{children}</Box>
 }
