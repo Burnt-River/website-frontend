@@ -1,18 +1,19 @@
-import { Link, SxProps } from "@mui/material";
-import React, { ReactElement } from "react";
-import Flex from "./ui/Flex";
+import { Button, Link, SxProps } from '@mui/material'
+import { ReactElement } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
+import Flex from './ui/Flex'
 
 interface HeaderLinkItem {
-  text: string;
-  to: string;
-  isSelected: boolean;
+  text: string
+  to: string
+  isSelected: boolean
 }
 
 interface HeaderProps {
-  items: HeaderLinkItem[];
-  title: string;
-  subtitle: string;
-  sx?: SxProps;
+  items: HeaderLinkItem[]
+  title: string
+  subtitle: string
+  sx?: SxProps
 }
 
 export default function Header({
@@ -21,51 +22,59 @@ export default function Header({
   subtitle,
   sx,
 }: HeaderProps): ReactElement {
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  const { pathname } = location
+
   return (
     <Flex
       sx={{
         ...sx,
-        width: "100%",
-        height: "330px",
-        color: "white",
-        backgroundColor: "#36393B",
+        width: '100%',
+        height: '330px',
+        color: 'white',
+        backgroundColor: '#36393B',
       }}
     >
       <Flex
         sx={{
-          p: "92px",
-          justifyContent: "space-between",
-          width: "100%",
-          alignItems: "center",
+          p: '92px',
+          justifyContent: 'space-between',
+          width: '100%',
+          alignItems: 'center',
         }}
       >
         <Flex
           sx={{
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
           }}
         >
-          <Flex sx={{ fontSize: "48px" }}>{title}</Flex>
-          <Flex sx={{ fontSize: "24px" }}>{subtitle}</Flex>
+          <Flex sx={{ fontSize: '48px' }}>{title}</Flex>
+          <Flex sx={{ fontSize: '24px' }}>{subtitle}</Flex>
         </Flex>
-        <Flex sx={{ gap: "24px" }}>
+        <Flex sx={{ gap: '24px' }}>
           {items.map((item) => (
-            <Link
-              href={item.to}
+            <Button
+              key={item.to}
+              onClick={() => {
+                navigate(item.to)
+              }}
               sx={{
-                textDecoration: "none",
-                color: "white",
-                fontSize: "24px",
-                borderBottom: item.isSelected ? "1px solid white" : "none",
-                pb: item.isSelected ? "8px" : "none",
+                textDecoration: 'none',
+                color: 'white',
+                fontSize: '24px',
+                borderBottom: pathname === item.to ? '1px solid white' : 'none',
+                pb: pathname === item.to ? '8px' : 'none',
               }}
             >
               {item.text}
-            </Link>
+            </Button>
           ))}
         </Flex>
       </Flex>
     </Flex>
-  );
+  )
 }
