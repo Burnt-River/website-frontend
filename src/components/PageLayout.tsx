@@ -1,11 +1,12 @@
-import { SxProps } from '@mui/material'
-import { Outlet } from 'react-router-dom'
+import { SxProps } from "@mui/material";
+import { Outlet } from "react-router-dom";
 
-import Flex from 'components/ui/Flex'
-import Header from 'components/Header'
+import Flex from "components/ui/Flex";
+import Header from "components/Header";
+import Footer from "./Footer";
 
 interface PageLayoutProps {
-  sx?: SxProps
+  sx?: SxProps;
 }
 
 export default function PageLayout({ sx }: PageLayoutProps) {
@@ -13,10 +14,12 @@ export default function PageLayout({ sx }: PageLayoutProps) {
     <Flex
       sx={{
         ...sx,
-        backgroundColor: '#BFB6BB',
-        width: '100%',
-        height: '100%',
-        position: 'fixed',
+        backgroundColor: "#BFB6BB",
+        width: "100%",
+        height: "100%",
+        position: "fixed",
+        flexDirection: "column",
+        alignItems: "center",
       }}
     >
       <Header
@@ -24,16 +27,42 @@ export default function PageLayout({ sx }: PageLayoutProps) {
         subtitle="ONTARIO"
         items={[
           {
-            text: 'About Us',
-            to: '/about',
+            text: "About Us",
+            to: "/about",
           },
           {
-            text: 'Gallery',
-            to: '/gallery',
+            text: "Gallery",
+            to: "/gallery",
+          },
+          {
+            text: "Get Involved",
+            to: "/get-involved",
+          },
+          {
+            text: "Community Centre",
+            to: "/community-centre",
           },
         ]}
       />
-      <Outlet />
+      <Flex
+        sx={{
+          pt: "4.2rem",
+          width: "100%",
+          justifyContent: "center",
+          alignItems: "center",
+          overflow: "auto",
+        }}
+      >
+        <Outlet />
+      </Flex>
+      <Footer
+        items={[
+          {
+            text: "Facebook",
+            to: "https://www.facebook.com/BurntRiverOntario/",
+          },
+        ]}
+      />
     </Flex>
-  )
+  );
 }
