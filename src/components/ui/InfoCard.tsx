@@ -14,12 +14,13 @@ export default function InfoCard({
   return (
     <Flex
       sx={{
-        width: "100%",
-        m: "4.8rem",
-        p: "2.4rem",
+        //  width: "100%",
+        mx: [0, 0, "4.8rem"],
+        my: ["2.4rem", "4.8rem"],
+        p: ["1.2rem", "2.4rem"],
         borderRadius: "30px",
         backgroundColor: "#D9D9D9",
-        fontSize: "22px",
+        fontSize: ["14px", "22px"],
         flexDirection: ["column", "column", "row"],
         ...sx,
       }}

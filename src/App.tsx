@@ -1,7 +1,5 @@
-import { Routes, Route } from "react-router-dom";
-
+import { Routes, Route, Navigate } from "react-router-dom";
 import PageLayout from "components/PageLayout";
-
 import "./index.css";
 import About from "views/About";
 import Gallery from "views/Gallery";
@@ -13,10 +11,11 @@ const App = () => {
     <Routes>
       <Route path="/" element={<PageLayout />}>
         <Route path="about" element={<About />} />
-        <Route path="gallery" element={<Gallery />} />
+        {/* <Route path="gallery" element={<Gallery />} /> */}
         <Route path="get-involved" element={<GetInvolved />} />
         <Route path="community-centre" element={<CommunityCentre />} />
       </Route>
+      <Route index element={<Navigate replace to="/about" />} />
     </Routes>
   );
 };

@@ -17,7 +17,7 @@ export default function About(): ReactElement {
         <Box
           component="img"
           src={ChristmasTree}
-          sx={{ height: "450px", borderRadius: "30px" }}
+          sx={{ height: ["300px", "450px"], borderRadius: "30px" }}
         />
         <Flex
           sx={{
@@ -33,15 +33,14 @@ export default function About(): ReactElement {
       </InfoCard>
       <InfoCard
         sx={{
-          maxWidth: "80rem",
+          maxWidth: ["100%", "80rem"],
           height: "100%",
           alignItems: "center",
-          width: "100%",
         }}
       >
         <Flex
           sx={{
-            p: "4.8rem",
+            py: "4.8rem",
             width: "100%",
             flexDirection: "column",
           }}

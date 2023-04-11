@@ -1,23 +1,18 @@
-import { ReactElement } from "react";
+import { ReactElement, ReactNode } from "react";
 import { Link, SxProps } from "@mui/material";
 import Flex from "components/ui/Flex";
 
 interface FooterLinkItem {
-  text: string;
+  content: ReactNode;
   to: string;
 }
 
 interface HeaderProps {
   items: FooterLinkItem[];
-
   sx?: SxProps;
 }
 
-export default function Footer({
-  items,
-
-  sx,
-}: HeaderProps): ReactElement {
+export default function Footer({ items, sx }: HeaderProps): ReactElement {
   return (
     <Flex
       sx={{
@@ -42,7 +37,7 @@ export default function Footer({
             fontSize: "16px",
           }}
         >
-          {item.text}
+          {item.content}
         </Link>
       ))}
     </Flex>

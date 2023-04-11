@@ -17,7 +17,7 @@ export default function GetInvolved(): ReactElement {
         <Box
           component="img"
           src={GetInvolvedPic}
-          sx={{ height: "450px", borderRadius: "30px" }}
+          sx={{ height: ["300px", "450px"], borderRadius: "30px" }}
         />
         <Flex
           sx={{

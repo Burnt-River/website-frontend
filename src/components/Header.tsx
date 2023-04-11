@@ -56,8 +56,10 @@ export default function Header({
             width: ["100%", "100%", "auto"],
           }}
         >
-          <Flex sx={{ fontSize: "48px", whiteSpace: "nowrap" }}>{title}</Flex>
-          <Flex sx={{ fontSize: "24px" }}>{subtitle}</Flex>
+          <Flex sx={{ fontSize: ["24px", "48px"], whiteSpace: "nowrap" }}>
+            {title}
+          </Flex>
+          <Flex sx={{ fontSize: ["12px", "24px"] }}>{subtitle}</Flex>
           <Button
             sx={{
               display: ["flex", "flex", "none"],

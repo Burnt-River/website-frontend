@@ -1,5 +1,7 @@
 import { SxProps } from "@mui/material";
 import { Outlet } from "react-router-dom";
+import { IconButton } from "@mui/material";
+import FacebookIcon from "@mui/icons-material/Facebook";
 
 import Flex from "components/ui/Flex";
 import Header from "components/Header";
@@ -30,10 +32,10 @@ export default function PageLayout({ sx }: PageLayoutProps) {
             text: "About Us",
             to: "/about",
           },
-          {
-            text: "Gallery",
-            to: "/gallery",
-          },
+          // {
+          //   text: "Gallery",
+          //   to: "/gallery",
+          // },
           {
             text: "Get Involved",
             to: "/get-involved",
@@ -58,7 +60,11 @@ export default function PageLayout({ sx }: PageLayoutProps) {
       <Footer
         items={[
           {
-            text: "Facebook",
+            content: (
+              <IconButton color="success">
+                <FacebookIcon />
+              </IconButton>
+            ),
             to: "https://www.facebook.com/BurntRiverOntario/",
           },
         ]}
