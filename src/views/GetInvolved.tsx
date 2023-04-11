@@ -6,11 +6,10 @@ import Flex from "components/ui/Flex";
 
 export default function GetInvolved(): ReactElement {
   return (
-    <Flex sx={{ pt: "16.2rem" }}>
+    <Flex>
       <InfoCard
         sx={{
           maxWidth: "80rem",
-          height: "100%",
           alignItems: "center",
           flexDirection: "column",
         }}

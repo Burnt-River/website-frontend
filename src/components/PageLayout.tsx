@@ -17,7 +17,7 @@ export default function PageLayout({ sx }: PageLayoutProps) {
         backgroundColor: "#BFB6BB",
         width: "100%",
         height: "100%",
-        position: "fixed",
+        mt: "200px",
         flexDirection: "column",
         alignItems: "center",
       }}
@@ -46,11 +46,11 @@ export default function PageLayout({ sx }: PageLayoutProps) {
       />
       <Flex
         sx={{
-          pt: "4.2rem",
           width: "100%",
           justifyContent: "center",
           alignItems: "center",
           overflow: "auto",
+          height: "100%",
         }}
       >
         <Outlet />

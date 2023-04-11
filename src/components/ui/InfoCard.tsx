@@ -19,8 +19,9 @@ export default function InfoCard({
         p: "2.4rem",
         borderRadius: "30px",
         backgroundColor: "#D9D9D9",
-        ...sx,
         fontSize: "22px",
+        flexDirection: ["column", "column", "row"],
+        ...sx,
       }}
     >
       {children}
